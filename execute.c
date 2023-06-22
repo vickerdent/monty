@@ -9,6 +9,7 @@
 */
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
+<<<<<<< HEAD
 	instruction_t opst[] = {
 				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
 				{"pop", f_pop},
@@ -49,4 +50,36 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		free_stack(*stack);
 		exit(EXIT_FAILURE); }
 	return (1);
+=======
+stack_t *h;
+int len = 0, aux;
+
+h = *head;
+while (h)
+{
+h = h->next;
+len++;
+}
+if (len < 2)
+{
+fprintf(stderr, "L%d: can't div, stack too short\n", counter);
+fclose(bus.file);
+free(bus.content);
+free_stack(*head);
+exit(EXIT_FAILURE);
+}
+h = *head;
+if (h->n == 0)
+{
+fprintf(stderr, "L%d: division by zero\n", counter);
+fclose(bus.file);
+free(bus.content);
+free_stack(*head);
+exit(EXIT_FAILURE);
+}
+aux = h->next->n / h->n;
+h->next->n = aux;
+*head = h->next;
+free(h);
+>>>>>>> cbdaec113abe1d14c172d394d6dce5a819f7a322
 }

@@ -1,4 +1,5 @@
-include "monty.h"
+#include "monty.h"
+
 /**
   *f_nop- serves as nothing
   *@head: serves as stack head
@@ -7,6 +8,6 @@ include "monty.h"
  */
 void f_nop(stack_t **head, unsigned int counter)
 {
-  (void) counter;
-  (void) head;
+(void) counter;
+(void) head;
 }
