@@ -1,4 +1,4 @@
-##include "monty.h"
+#include "monty.h"
 /**
  * f_div - serves to divide the top two elements of the stack.
  * @head: serves as stack head
@@ -37,7 +37,9 @@ void f_div(stack_t **head, unsigned int counter)
     h->next->n = aux;
     *head = h->next;
     free(h);
-}include "monty.h"
+}
+
+
 /**
 * free_stack - serves to free a doubly linked list
 * @head: serves as head of the stack
